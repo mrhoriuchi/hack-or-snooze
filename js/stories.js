@@ -46,7 +46,7 @@ function putStoriesOnPage() {
   $allStoriesList.empty();
 
   // loop through all of our stories and generate HTML for them
-  for (let story of storyList.stories) {
+  for (const story of storyList.stories) {
     const $story = generateStoryMarkup(story);
     $allStoriesList.append($story);
   }
@@ -89,7 +89,7 @@ function putFavoritesListOnPage() {
   if (currentUser.favorites.length === 0) {
     $favoritedStoriesList.append("<h5>No favorites added!</h5>");
   } else {
-    for (let story of currentUser.favorites) {
+    for (const story of currentUser.favorites) {
       const $story = generateStoryMarkup(story);
       $favoritedStoriesList.append($story);
     }
@@ -121,7 +121,7 @@ function putUserStoriesOnPage() {
   if (currentUser.ownStories.length === 0) {
     $myStoriesList.append("<h5>No stories made!</h5>");
   } else {
-    for (let story of currentUser.ownStories) {
+    for (const story of currentUser.ownStories) {
       const $story = generateStoryMarkup(story, true);
       $myStoriesList.append($story);
     }
